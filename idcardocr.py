@@ -488,7 +488,7 @@ def get_result_vary_length(red, langset, org_img, custom_config=''):
 
 
 def punc_filter(str):
-        temp = str
+        temp = str.upper()
         xx      =   u"([\u4e00-\u9fff0-9A-Z]+)"
         pattern =   re.compile(xx)
         results =   pattern.findall(temp)
