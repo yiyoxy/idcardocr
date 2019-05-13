@@ -11,7 +11,7 @@ import cgi
 def process(img_name):
     try:
         idfind = findidcard.findidcard()
-        idcard_img = idfind.find(img_name, mode=0)
+        idcard_img = idfind.find(img_name,mode=0)
         result_dict = idcardocr.idcardocr(idcard_img)
         result_dict['error'] = 0
     except Exception as e:
