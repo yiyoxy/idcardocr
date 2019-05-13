@@ -56,10 +56,10 @@ class S(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(json.dumps(result).encode('utf-8'))
 
-def http_server(server_class=ForkingServer, handler_class=S, port=8080):
+def http_server(server_class=ForkingServer, handler_class=S, port=8180):
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
-    cv2.ocl.setUseOpenCL(False)
+    cv2.ocl.setUseOpenCL(True)
     print('Starting httpd...')
     print(u"是否启用OpenCL：%s"%cv2.ocl.useOpenCL())
     httpd.serve_forever()
